@@ -8,17 +8,13 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-    // check if message isn't from us
-    if (msg.author == client.user) {
-      return;
-    }
-    else if (msg.content === 'ping') {
-      msg.reply('Pong!');
-    }
-    else {
-        msg.reply(msg.content);
-        console.log(msg.content);
-    }
+  // Vérifier si le message n'est pas envoyé par le bot lui-même
+  if (msg.author.bot) return;
+
+  // Répondre "je suis là" lorsque l'utilisateur écrit "ici"
+  if (msg.content.toLowerCase() === 'ici') {
+    msg.reply('je suis là');
+  }
 });
 
 client.login(process.env.TOKEN); //login bot using token
