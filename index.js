@@ -1,5 +1,6 @@
 // Require the necessary discord.js classes
 const { Client, Events, GatewayIntentBits } = require('discord.js');
+const keep_alive = require('./keep_alive.js')
 const { token } = require('./config.json');
 
 // Create a new client instance
